@@ -2,11 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBRK05KyYOGTDsHepOeGcHz8hm0o4l-Z28",
-    authDomain: "necxis-bbefa.firebaseapp.com",
-    projectId: "necxis-bbefa",
-    appId: "1:992328778612:web:0548ed35c3293abafee221",
+    apiKey: process.env.NEXT_PUBLIC_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_PROJECTID,
+    appId: process.env.NEXT_PUBLIC_API_APP_ID,
 };
+
+console.log('process.env.REACT_APP_API_KEY',process.env.NEXT_PUBLIC_API_KEY)
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
